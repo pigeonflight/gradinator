@@ -23,7 +23,7 @@ class Gradinator:
                  if self.extract_username(commit) 
                                   == self.username]
 
-    def count(self):
+    def commit_count(self):
         return len(self.commits())
 
     def extract_username(self,commit):
@@ -37,7 +37,7 @@ if __name__ == "__main__":
     # this is just a test
     g = Gradinator("pigeonflight","gradinator")
     g.clone_repo()
-    print "{} commits".format(g.count())
+    print "{} commits".format(g.commit_count())
     
 
 
