@@ -1,6 +1,13 @@
 Gradinator
 ==============
 The beginnings of an auto grading system
+The idea is to measure quantity of commits
+using the github api and quality of commits
+using unit tests that can be "fed" to the 
+Gradinator object
+
+Currently it assumes that the code being assessed is written in Python.
+
 
 Usage
 ===========
