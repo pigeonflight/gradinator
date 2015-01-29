@@ -17,9 +17,9 @@ Install requirements::
     source venv/bin/activate
     pip install -r requirements.txt
 
-Test it out::
+Test it out (where XXXXXXXXXXXXXXXX must be replaced with your custom github token)::
 
-    python gradinator.py
+    python gradinator.py XXXXXXXXXXXXXXXXXXXX
 
 Using in a script::
 
