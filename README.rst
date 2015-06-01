@@ -29,7 +29,9 @@ Using in a script::
     # the example below runs against 
     # http://github.com/pigeonflight/gradinator
     # You need to pass a github token to the Gradinator object
-    g = Gradinator("pigeonflight","gradinator",token="XXXXXXXXXXX")
+    username = pigeonflight
+    repo = gradinator
+    g = Gradinator(username,repo,token="XXXXXXXXXXX")
     g.clone_repo()
     print "{} commits".format(g.commit_count())
     
