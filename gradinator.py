@@ -2,6 +2,7 @@ import argparse
 import textwrap
 import git
 import requests
+import tempfile
 import time
 
  
@@ -46,7 +47,10 @@ class Gradinator:
         repo_url = self.github_repo.format(self.username,self.repo)
         if self.fullrepourl != "":
             repo_url = self.fullrepourl
-        git.Git().clone(repo_url)
+        #git.Git().clone(repo_url)
+
+        repo_dir = tempfile.mkdtemp(prefix='gradinator_')
+        git.Repo.clone_from(repo_url, repo_dir)
    
     def commits(self):
         r = requests.get(self.commit_url,headers=self.headers)
