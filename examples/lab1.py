@@ -9,6 +9,6 @@ with open('lab1.csv', 'rb') as csvfile:
     for submission in submissions:
         fullrepourl = submission[4].strip()
 
-    g = Gradinator(fullrepourl=fullrepourl,token=token)
-    g.clone_repo()
-    print "{} commits".format(g.commit_count())
+        g = Gradinator(fullrepourl=fullrepourl,token=token)
+        g.clone_repo()
+        print "{} commits".format(g.commit_count())
