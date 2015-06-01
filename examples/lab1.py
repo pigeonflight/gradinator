@@ -1,3 +1,4 @@
+from gradinator import Gradinator
 username=pigeonflight
 repo=gradinator
 token = "XXXXXXXXX" # generate token at https://github.com/pigeonflight/gradinator
