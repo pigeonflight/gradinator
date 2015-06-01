@@ -6,7 +6,7 @@ import time
 
  
 def RateLimited(maxPerSecond):
-    """ rate limite function, borrowed from https://gist.github.com/gregburek/1441055 """
+    """ rate limit function, borrowed from https://gist.github.com/gregburek/1441055 """
     minInterval = 1.0 / float(maxPerSecond)
     def decorate(func):
         lastTimeCalled = [0.0]
@@ -30,6 +30,12 @@ class Gradinator:
         self.fullrepourl = fullrepourl
         api_for_commits = "https://api.github.com/repos/{}/{}/commits"
         self.github_repo = "git@github.com:{}/{}.git"
+
+        if self.fullrepourl != "":
+           reposplit = self.fullrepourl.split('/')
+           username = reposplit[3]
+           repo = reposplit[4].split('.')[0]
+
         self.commit_url = api_for_commits.format(username,repo)
         self.token = token
         self.headers = {'Authorization': 'token %s' % self.token}
@@ -73,6 +79,3 @@ if __name__ == "__main__":
     g = Gradinator("pigeonflight","gradinator",token)
     g.clone_repo()
     print "{} commits".format(g.commit_count())
-    
-
-
