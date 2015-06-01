@@ -29,9 +29,12 @@ Using in a script::
     # the example below runs against 
     # http://github.com/pigeonflight/gradinator
     # You need to pass a github token to the Gradinator object
+    from gradinator import Gradinator
+    import os
+    token = os.getenv('GIT_TOKEN')
     username = pigeonflight # username can also be an organization name
     repo = gradinator
-    g = Gradinator(username,repo,token="XXXXXXXXXXX")
+    g = Gradinator(username,repo,token=token)
     g.clone_repo()
     print "{} commits".format(g.commit_count())
 
@@ -43,8 +46,10 @@ Using in a script with fullrepourl::
     # the example below runs against 
     # http://github.com/pigeonflight/gradinator
     # You need to pass a github token to the Gradinator object
+    import os
+    token = os.getenv('GIT_TOKEN')
     fullrepourl = "https://github.com/pigeonflight/gradinator"
-    g = Gradinator(fullrepourl=fullrepourl,token="XXXXXXXXXXX")
+    g = Gradinator(fullrepourl=fullrepourl,token=token)
     g.clone_repo()
     print "{} commits".format(g.commit_count())
 
