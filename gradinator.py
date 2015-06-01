@@ -34,8 +34,11 @@ class Gradinator:
 
         if self.fullrepourl != "":
            reposplit = self.fullrepourl.split('/')
-           username = reposplit[3]
-           repo = reposplit[4].split('.')[0]
+           if len(reposplit) < 2:
+               print "something is wrong with the url: {}".format(fullrepourl)
+           else:
+               username = reposplit[3]
+               repo = reposplit[4].split('.')[0]
 
         self.commit_url = api_for_commits.format(username,repo)
         self.token = token
