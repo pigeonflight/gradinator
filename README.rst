@@ -34,5 +34,7 @@ Using in a script::
     g = Gradinator(username,repo,token="XXXXXXXXXXX")
     g.clone_repo()
     print "{} commits".format(g.commit_count())
+
+If you need to generate a token visit: https://github.com/settings/tokens
     
 See the scripts in the `examples` folder
