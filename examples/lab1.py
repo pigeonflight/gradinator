@@ -1,7 +1,13 @@
-from gradinator import Gradinator
-username=pigeonflight
-repo=gradinator
-token = "XXXXXXXXX" # generate token at https://github.com/pigeonflight/gradinator
-g = Gradinator(username,repo,token=token)
+#from gradinator import Gradinator
+import csv
+with open('lab1.csv', 'rb') as csvfile:
+    submissions = csv.reader(csvfile)
+    for submission in submissions:
+        fullrepourl = submission[0]
+
+#username=pigeonflight
+#repo=gradinator
+token = "XXXXXXXXX" # generate token at https://github.com/settings/tokens
+g = Gradinator(fullrepourl=fullrepourl,token=token)
 g.clone_repo()
 print "{} commits".format(g.commit_count())

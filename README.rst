@@ -35,6 +35,19 @@ Using in a script::
     g.clone_repo()
     print "{} commits".format(g.commit_count())
 
+Using in a script with fullrepourl::
+
+    from gradinator import Gradinator
+    # Gradinator object expects a github user name
+    # and a github repo name (just the basename)
+    # the example below runs against 
+    # http://github.com/pigeonflight/gradinator
+    # You need to pass a github token to the Gradinator object
+    fullrepourl = "https://github.com/pigeonflight/gradinator"
+    g = Gradinator(fullrepourl=fullrepourl,token="XXXXXXXXXXX")
+    g.clone_repo()
+    print "{} commits".format(g.commit_count())
+
 If you need to generate a token visit: https://github.com/settings/tokens
     
 See the scripts in the `examples` folder

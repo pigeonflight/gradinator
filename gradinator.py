@@ -24,9 +24,10 @@ def RateLimited(maxPerSecond):
 
 class Gradinator:
     """ class for grading github """
-    def __init__(self, username="", repo="", token=""):
+    def __init__(self, fullrepourl="", username="", repo="", token=""):
         self.username = username
         self.repo = repo
+        self.fullrepourl = fullrepourl
         api_for_commits = "https://api.github.com/repos/{}/{}/commits"
         self.github_repo = "git@github.com:{}/{}.git"
         self.commit_url = api_for_commits.format(username,repo)
@@ -37,6 +38,8 @@ class Gradinator:
 
     def clone_repo(self):
         repo_url = self.github_repo.format(self.username,self.repo)
+        if self.fullrepourl != "":
+            repo_url = self.fullrepourl
         git.Git().clone(repo_url)
    
     def commits(self):
