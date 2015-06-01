@@ -2,6 +2,7 @@ from gradinator import Gradinator
 import csv
 import os
 token = os.getenv('GIT_TOKEN')
+# you need a token to use the github api
 # generate token at https://github.com/settings/tokens
 
 with open('lab1.csv', 'rb') as csvfile:
@@ -16,3 +17,7 @@ with open('lab1.csv', 'rb') as csvfile:
         g = Gradinator(fullrepourl=fullrepourl,token=token)
         g.clone_repo()
         print "{} {} {} {} commits".format(timestamp,first,last,g.commit_count())
+
+# To use this script run "python lab1.py"
+# currently assumes that dependencies are installed and that gradinator.py 
+# is in the same directory as lab1.py
