@@ -56,3 +56,9 @@ Using in a script with fullrepourl::
 If you need to generate a token visit: https://github.com/settings/tokens
     
 See the scripts in the `examples` folder
+The scripts assume that an env variable has been set called ``GIT_TOKEN``
+You can set it with the following command:
+
+    export GIT_TOKEN=xxxxxxxxxxxxxxxxx
+    
+replace the placeholder with your generated token
